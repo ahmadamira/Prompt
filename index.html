@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Celestia Voyages | Space Tourism</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <span class="logo-icon">✦</span>
+          <span>Celestia Voyages</span>
+        </div>
+        <div class="nav-links">
+          <a href="#" class="active">Home</a>
+          <a href="#destinations">Destinations</a>
+          <a href="#packages">Packages</a>
+          <a href="#accommodations">Accommodations</a>
+          <a href="#" id="login-btn">Login</a>
+          <a href="#" id="signup-btn">Sign Up</a>
+        </div>
+        <div class="mobile-menu-btn">☰</div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-content">
+          <h1>Your Journey Beyond Earth Begins Now</h1>
+          <p>
+            Experience the wonders of space travel with Celestia Voyages, the
+            premier platform for civilian space tourism.
+          </p>
+          <a href="#book-now" class="btn">Book Your Journey</a>
+        </div>
+      </section>
+
+      <div class="container">
+        <form class="search-form" id="book-now">
+          <div class="search-row">
+            <div class="form-group">
+              <label for="departure">Departure Date</label>
+              <input
+                type="date"
+                id="departure"
+                class="form-control"
+                min="2025-03-19"
+              />
+            </div>
+            <div class="form-group">
+              <label for="destination">Destination</label>
+              <select id="destination" class="form-control">
+                <option value="">Select a destination</option>
+                <option value="orbit">Earth Orbit</option>
+                <option value="lunar">Lunar Base Alpha</option>
+                <option value="station">Celestial Space Station</option>
+                <option value="mars">Mars Colony (Limited)</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="travelers">Number of Travelers</label>
+              <input
+                type="number"
+                id="travelers"
+                class="form-control"
+                min="1"
+                max="10"
+                value="1"
+              />
+            </div>
+            <div class="form-group">
+              <label for="class">Travel Class</label>
+              <select id="class" class="form-control">
+                <option value="">Select a class</option>
+                <option value="economy">Economy Shuttle</option>
+                <option value="luxury">Luxury Cabin</option>
+                <option value="vip">VIP Zero-Gravity Suite</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-btn">
+            <button type="button" class="btn" id="search-btn">
+              Search Available Flights
+            </button>
+          </div>
+        </form>
+      </div>
+
+      <section class="destinations" id="destinations">
+        <div class="container">
+          <h2 class="section-title">Popular Destinations</h2>
+          <div class="destination-grid">
+            <div class="destination-card">
+              <img
+                src="/api/placeholder/400/200"
+                alt="Earth Orbit"
+                class="destination-img"
+              />
+              <div class="destination-content">
+                <h3 class="destination-title">Earth Orbit</h3>
+                <p class="destination-info">
+                  Experience the breathtaking views of our planet from 400km
+                  above. This 3-day journey offers multiple orbits with
+                  spectacular sunrises and sunsets.
+                </p>
+                <div class="destination-price">From $250,000</div>
+                <button
+                  class="btn"
+                  onclick="openBookingModal('Earth Orbit', 250000)"
+                >
+                  Book Now
+                </button>
+              </div>
+            </div>
+            <div class="destination-card">
+              <img
+                src="/api/placeholder/400/200"
+                alt="Lunar Base Alpha"
+                class="destination-img"
+              />
+              <div class="destination-content">
+                <h3 class="destination-title">Lunar Base Alpha</h3>
+                <p class="destination-info">
+                  Spend a week at our state-of-the-art lunar habitat. Experience
+                  1/6th gravity and take guided excursions on the moon's
+                  surface.
+                </p>
+                <div class="destination-price">From $750,000</div>
+                <button
+                  class="btn"
+                  onclick="openBookingModal('Lunar Base Alpha', 750000)"
+                >
+                  Book Now
+                </button>
+              </div>
+            </div>
+            <div class="destination-card">
+              <img
+                src="/api/placeholder/400/200"
+                alt="Celestial Space Station"
+                class="destination-img"
+              />
+              <div class="destination-content">
+                <h3 class="destination-title">Celestial Space Station</h3>
+                <p class="destination-info">
+                  Our premium orbiting hotel features luxury accommodations, a
+                  zero-gravity recreation deck, and a cosmic dining experience.
+                </p>
+                <div class="destination-price">From $500,000</div>
+                <button
+                  class="btn"
+                  onclick="openBookingModal('Celestial Space Station', 500000)"
+                >
+                  Book Now
+                </button>
+              </div>
+            </div>
+            <div class="destination-card">
+              <img
+                src="/api/placeholder/400/200"
+                alt="Mars Colony"
+                class="destination-img"
+              />
+              <div class="destination-content">
+                <h3 class="destination-title">Mars Colony</h3>
+                <p class="destination-info">
+                  Be among the first humans to visit the red planet. This
+                  exclusive 30-day expedition includes surface excursions and
+                  habitat living.
+                </p>
+                <div class="destination-price">From $2,500,000</div>
+                <button
+                  class="btn"
+                  onclick="openBookingModal('Mars Colony', 2500000)"
+                >
+                  Book Now
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="packages" id="packages">
+        <div class="container">
+          <h2 class="section-title">Travel Packages</h2>
+          <div class="package-cards">
+            <div class="package-card">
+              <div class="package-header economy-header">
+                <h3 class="package-title">Economy</h3>
+                <div class="package-price">$250,000<span>+</span></div>
+              </div>
+              <div class="package-body">
+                <ul class="package-features">
+                  <li>Shared capsule accommodation</li>
+                  <li>Standard meal packages</li>
+                  <li>One window seat rotation</li>
+                  <li>Limited zero-gravity time</li>
+                  <li>Basic space training</li>
+                  <li>Standard spacesuit for launch</li>
+                </ul>
+                <button
+                  class="btn"
+                  style="width: 100%"
+                  onclick="selectPackage('Economy')"
+                >
+                  Select Package
+                </button>
+              </div>
+            </div>
+            <div class="package-card">
+              <div class="package-header luxury-header">
+                <h3 class="package-title">Luxury</h3>
+                <div class="package-price">$500,000<span>+</span></div>
+              </div>
+              <div class="package-body">
+                <ul class="package-features">
+                  <li>Private cabin accommodation</li>
+                  <li>Premium menu selection</li>
+                  <li>Panoramic Earth viewing deck</li>
+                  <li>Extended zero-gravity sessions</li>
+                  <li>Advanced space training</li>
+                  <li>Custom fitted spacesuit</li>
+                  <li>Priority scheduling</li>
+                </ul>
+                <button
+                  class="btn"
+                  style="width: 100%"
+                  onclick="selectPackage('Luxury')"
+                >
+                  Select Package
+                </button>
+              </div>
+            </div>
+            <div class="package-card">
+              <div class="package-header vip-header">
+                <h3 class="package-title">VIP</h3>
+                <div class="package-price">$1,000,000<span>+</span></div>
+              </div>
+              <div class="package-body">
+                <ul class="package-features">
+                  <li>Exclusive zero-gravity suite</li>
+                  <li>Personal chef service</li>
+                  <li>Private viewport lounge</li>
+                  <li>Unlimited zero-gravity access</li>
+                  <li>One-on-one astronaut training</li>
+                  <li>Space walk opportunity (orbit only)</li>
+                  <li>Personal AI concierge</li>
+                  <li>Priority medical support</li>
+                  <li>Exclusive mission patch</li>
+                </ul>
+                <button
+                  class="btn"
+                  style="width: 100%"
+                  onclick="selectPackage('VIP')"
+                >
+                  Select Package
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="accommodations" id="accommodations">
+        <div class="container">
+          <h2 class="section-title">Space Accommodations</h2>
+          <div class="accordion">
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <span class="accordion-title">Orbital Hotel</span>
+                <span class="accordion-icon">▼</span>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  <p>
+                    Our Orbital Hotel orbits 400km above Earth, offering
+                    unparalleled views and luxury accommodations. Features
+                    include:
+                  </p>
+                  <ul>
+                    <li>Zero-gravity suites with Earth-facing windows</li>
+                    <li>
+                      Cosmic dining restaurant with rotating international menu
+                    </li>
+                    <li>Observation deck with 360° views</li>
+                    <li>Microgravity spa treatments</li>
+                    <li>Daily space walks (VIP guests)</li>
+                  </ul>
+                  <button
+                    class="btn"
+                    style="margin-top: 1rem"
+                    onclick="selectAccommodation('Orbital Hotel')"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <span class="accordion-title">Lunar Base Alpha</span>
+                <span class="accordion-icon">▼</span>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  <p>
+                    Experience life on the Moon at our state-of-the-art Lunar
+                    Base Alpha. This facility offers:
+                  </p>
+                  <ul>
+                    <li>Pressurized habitat pods with Earth views</li>
+                    <li>Low-gravity recreation center</li>
+                    <li>Guided surface excursions</li>
+                    <li>Lunar rover expeditions</li>
+                    <li>Astronomy observatory</li>
+                    <li>Hydroponics garden tour</li>
+                    <li>Hydroponics garden tour</li>
+                  </ul>
+                  <button
+                    class="btn"
+                    style="margin-top: 1rem"
+                    onclick="selectAccommodation('Lunar Base Alpha')"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <div class="accordion-header">
+                <span class="accordion-title">Mars Colony</span>
+                <span class="accordion-icon">▼</span>
+              </div>
+              <div class="accordion-content">
+                <div class="accordion-body">
+                  <p>
+                    Be among the pioneers of human Mars exploration at our red
+                    planet colony. Features include:
+                  </p>
+                  <ul>
+                    <li>Pressurized habitation modules</li>
+                    <li>Martian terrain excursions</li>
+                    <li>Research lab participation</li>
+                    <li>Martian sunset viewings</li>
+                    <li>Communication center with direct Earth link</li>
+                    <li>Greenhouse agricultural experience</li>
+                  </ul>
+                  <button
+                    class="btn"
+                    style="margin-top: 1rem"
+                    onclick="selectAccommodation('Mars Colony')"
+                  >
+                    View Details
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="dashboard" id="user-dashboard">
+        <div class="container">
+          <h2 class="section-title">Your Space Journey Dashboard</h2>
+
+          <div class="tab-container">
+            <div class="tab-links">
+              <div class="tab-link active" data-tab="upcoming">
+                Upcoming Journeys
+              </div>
+              <div class="tab-link" data-tab="profile">Profile</div>
+              <div class="tab-link" data-tab="tips">Travel Tips</div>
+            </div>
+
+            <div class="tab-content">
+              <div class="tab-pane active" id="upcoming">
+                <h3>Next Launch: Lunar Base Alpha</h3>
+
+                <div class="countdown">
+                  <div class="countdown-item">
+                    <span class="countdown-value" id="days">64</span>
+                    <span class="countdown-label">Days</span>
+                  </div>
+                  <div class="countdown-item">
+                    <span class="countdown-value" id="hours">12</span>
+                    <span class="countdown-label">Hours</span>
+                  </div>
+                  <div class="countdown-item">
+                    <span class="countdown-value" id="minutes">34</span>
+                    <span class="countdown-label">Minutes</span>
+                  </div>
+                  <div class="countdown-item">
+                    <span class="countdown-value" id="seconds">56</span>
+                    <span class="countdown-label">Seconds</span>
+                  </div>
+                </div>
+
+                <div class="progress-container">
+                  <h4>Journey Preparation Progress</h4>
+                  <div class="progress-steps">
+                    <div class="step active">
+                      1
+                      <span class="step-label">Booking</span>
+                    </div>
+                    <div class="step active">
+                      2
+                      <span class="step-label">Medical Clearance</span>
+                    </div>
+                    <div class="step">
+                      3
+                      <span class="step-label">Training</span>
+                    </div>
+                    <div class="step">
+                      4
+                      <span class="step-label">Equipment</span>
+                    </div>
+                    <div class="step">
+                      5
+                      <span class="step-label">Launch</span>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="trip-details">
+                  <h4>Trip Details</h4>
+                  <div class="detail-row">
+                    <div class="detail-label">Destination:</div>
+                    <div class="detail-value">Lunar Base Alpha</div>
+                  </div>
+                  <div class="detail-row">
+                    <div class="detail-label">Duration:</div>
+                    <div class="detail-value">7 days (5 days on Luna)</div>
+                  </div>
+                  <div class="detail-row">
+                    <div class="detail-label">Departure:</div>
+                    <div class="detail-value">May 25, 2025 at 09:15 UTC</div>
+                  </div>
+                  <div class="detail-row">
+                    <div class="detail-label">Return:</div>
+                    <div class="detail-value">June 1, 2025 at 14:30 UTC</div>
+                  </div>
+                  <div class="detail-row">
+                    <div class="detail-label">Package:</div>
+                    <div class="detail-value">Luxury</div>
+                  </div>
+                  <div class="detail-row">
+                    <div class="detail-label">Spaceport:</div>
+                    <div class="detail-value">
+                      Celestia Launch Complex, Boca Chica
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="profile">
+                <h3>Personal Information</h3>
+                <form class="modal-form">
+                  <div class="form-group">
+                    <label for="profile-name">Full Name</label>
+                    <input
+                      type="text"
+                      id="profile-name"
+                      class="form-control"
+                      value="Stella Voyager"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="profile-email">Email Address</label>
+                    <input
+                      type="email"
+                      id="profile-email"
+                      class="form-control"
+                      value="stella@example.com"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="profile-phone">Phone Number</label>
+                    <input
+                      type="tel"
+                      id="profile-phone"
+                      class="form-control"
+                      value="+1 (555) 123-4567"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="profile-dob">Date of Birth</label>
+                    <input
+                      type="date"
+                      id="profile-dob"
+                      class="form-control"
+                      value="1995-03-15"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="profile-passport">Passport Number</label>
+                    <input
+                      type="text"
+                      id="profile-passport"
+                      class="form-control"
+                      value="X12345678"
+                    />
+                  </div>
+                  <div class="form-btn">
+                    <button type="button" class="btn">Update Profile</button>
+                  </div>
+                </form>
+
+                <h3 style="margin-top: 2rem">Payment Methods</h3>
+                <div class="reservation-list">
+                  <div class="reservation-card">
+                    <div><strong>Credit Card</strong></div>
+                    <div>**** **** **** 4321</div>
+                    <div>Expires: 08/27</div>
+                    <button class="btn" style="margin-top: 0.5rem">Edit</button>
+                  </div>
+                  <div class="reservation-card">
+                    <div><strong>Space Credits</strong></div>
+                    <div>Balance: 250,000 SC</div>
+                    <div>Valid until: 12/25</div>
+                    <button class="btn" style="margin-top: 0.5rem">
+                      Top Up
+                    </button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="tab-pane" id="tips">
+                <h3>AI-Generated Space Travel Tips</h3>
+                <div class="travel-tips">
+                  <div class="tip-item">
+                    <h4>Microgravity Adaptation</h4>
+                    <p>
+                      Your body will need time to adjust to microgravity. In the
+                      first 24-48 hours, you may experience Space Adaptation
+                      Syndrome (space sickness). Take the prescribed anti-nausea
+                      medication before launch, and move slowly and deliberately
+                      during your first day in space.
+                    </p>
+                  </div>
+                  <div class="tip-item">
+                    <h4>Hydration</h4>
+                    <p>
+                      The recycled air in spacecraft is very dry. Drink at least
+                      2 liters of water daily to stay properly hydrated. Your
+                      body's fluid shift in microgravity can mask dehydration
+                      symptoms, so maintain regular water intake even if you
+                      don't feel thirsty.
+                    </p>
+                  </div>
+                  <div class="tip-item">
+                    <h4>Sleep Preparations</h4>
+                    <p>
+                      In orbit, you'll experience 16 sunrises and sunsets each
+                      day. Pack a sleep mask to block out light during sleep
+                      periods. Consider bringing ear plugs as well, as
+                      spacecraft can be noisy environments.
+                    </p>
+                  </div>
+                  <div class="tip-item">
+                    <h4>Photography Tips</h4>
+                    <p>
+                      Earth photography from space is challenging due to the
+                      spacecraft's velocity (28,000 km/h). Use a fast shutter
+                      speed of at least 1/1000s to capture clear images. The
+                      blue marble effect is best observed during daylight passes
+                      over oceans.
+                    </p>
+                  </div>
+                  <div class="tip-item">
+                    <h4>Recommended Gear</h4>
+                    <p>
+                      Pack light, comfortable clothing made from natural fibers.
+                      Bring a small personal item that has sentimental value -
+                      astronauts report that connecting with personal items
+                      helps with the psychological adjustment to space.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="login-modal" id="login-modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('login-modal')">&times;</span>
+        <h2 class="modal-title">Welcome Back, Explorer</h2>
+        <form class="modal-form">
+          <div class="form-group">
+            <label for="login-email">Email Address</label>
+            <input
+              type="email"
+              id="login-email"
+              class="form-control"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="login-password">Password</label>
+            <input
+              type="password"
+              id="login-password"
+              class="form-control"
+              placeholder="Enter your password"
+              required
+            />
+          </div>
+          <div class="form-btn">
+            <button type="button" class="btn" id="login-submit">Login</button>
+          </div>
+        </form>
+        <p style="text-align: center; margin-top: 1rem">
+          Don't have an account?
+          <a
+            href="#"
+            style="color: var(--accent)"
+            onclick="openModal('signup-modal'); closeModal('login-modal')"
+            >Sign Up</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <div class="signup-modal" id="signup-modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('signup-modal')">&times;</span>
+        <h2 class="modal-title">Join the Space Journey</h2>
+        <form class="modal-form">
+          <div class="form-group">
+            <label for="signup-name">Full Name</label>
+            <input
+              type="text"
+              id="signup-name"
+              class="form-control"
+              placeholder="Enter your full name"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="signup-email">Email Address</label>
+            <input
+              type="email"
+              id="signup-email"
+              class="form-control"
+              placeholder="Enter your email"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="signup-password">Password</label>
+            <input
+              type="password"
+              id="signup-password"
+              class="form-control"
+              placeholder="Create a password"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="signup-password-confirm">Confirm Password</label>
+            <input
+              type="password"
+              id="signup-password-confirm"
+              class="form-control"
+              placeholder="Confirm your password"
+              required
+            />
+          </div>
+          <div class="form-btn">
+            <button type="button" class="btn" id="signup-submit">
+              Sign Up
+            </button>
+          </div>
+        </form>
+        <p style="text-align: center; margin-top: 1rem">
+          Already have an account?
+          <a
+            href="#"
+            style="color: var(--accent)"
+            onclick="openModal('login-modal'); closeModal('signup-modal')"
+            >Login</a
+          >
+        </p>
+      </div>
+    </div>
+
+    <div class="booking-modal" id="booking-modal">
+      <div class="modal-content">
+        <span class="close" onclick="closeModal('booking-modal')">&times;</span>
+        <h2 class="modal-title">Book Your Space Journey</h2>
+        <form class="modal-form">
+          <div class="form-group">
+            <label for="booking-destination">Destination</label>
+            <input
+              type="text"
+              id="booking-destination"
+              class="form-control"
+              readonly
+            />
+          </div>
+          <div class="form-group">
+            <label for="booking-departure">Departure Date</label>
+            <input
+              type="date"
+              id="booking-departure"
+              class="form-control"
+              min="2025-03-19"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="booking-return">Return Date</label>
+            <input
+              type="date"
+              id="booking-return"
+              class="form-control"
+              min="2025-03-19"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="booking-travelers">Number of Travelers</label>
+            <input
+              type="number"
+              id="booking-travelers"
+              class="form-control"
+              min="1"
+              max="10"
+              value="1"
+              required
+            />
+          </div>
+          <div class="form-group">
+            <label for="booking-class">Travel Class</label>
+            <select id="booking-class" class="form-control" required>
+              <option value="economy">Economy Shuttle</option>
+              <option value="luxury">Luxury Cabin</option>
+              <option value="vip">VIP Zero-Gravity Suite</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="booking-price">Total Price</label>
+            <input
+              type="text"
+              id="booking-price"
+              class="form-control"
+              readonly
+            />
+          </div>
+          <div class="form-btn">
+            <button type="button" class="btn" id="booking-submit">
+              Confirm Booking
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <footer>
+      <div class="footer-content">
+        <div class="footer-column">
+          <h3>About Celestia</h3>
+          <ul>
+            <li><a href="#">Our Story</a></li>
+            <li><a href="#">Safety Record</a></li>
+            <li><a href="#">Technology</a></li>
+            <li><a href="#">Spaceports</a></li>
+            <li><a href="#">Careers</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Destinations</h3>
+          <ul>
+            <li><a href="#">Earth Orbit</a></li>
+            <li><a href="#">Lunar Base Alpha</a></li>
+            <li><a href="#">Celestial Space Station</a></li>
+            <li><a href="#">Mars Colony</a></li>
+            <li><a href="#">Future Destinations</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Travel Info</h3>
+          <ul>
+            <li><a href="#">Health Requirements</a></li>
+            <li><a href="#">Training Programs</a></li>
+            <li><a href="#">What to Expect</a></li>
+            <li><a href="#">Packing Guidelines</a></li>
+            <li><a href="#">Insurance</a></li>
+          </ul>
+        </div>
+        <div class="footer-column">
+          <h3>Contact Us</h3>
+          <ul>
+            <li><a href="#">Support</a></li>
+            <li><a href="#">Live Chat</a></li>
+            <li><a href="#">Feedback</a></li>
+            <li><a href="#">Spaceport Locations</a></li>
+            <li><a href="#">Emergency Contacts</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; 2025 Celestia Voyages. All rights reserved. Space travel is
+          subject to regulatory approval.
+        </p>
+      </div>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
